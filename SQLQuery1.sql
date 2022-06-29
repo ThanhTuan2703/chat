@@ -11,6 +11,13 @@ create table Message(
 	MessageText nvarchar(255)
 )
 
+create table Account(
+	UserName nvarchar(255) PRIMARY KEY,
+	Pass nvarchar(255),
+	Email nvarchar(255),
+	Phone int
+)
+
 drop table Message;
 drop table Person;
 
