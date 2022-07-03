@@ -46,7 +46,7 @@ public class ClientChatter extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ClientChatter frame = new ClientChatter();
+					ClientChatter frame = new ClientChatter("Anonymous");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -58,7 +58,7 @@ public class ClientChatter extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ClientChatter() {
+	public ClientChatter(String inputStaffName) {
 		setTitle("Client");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 350);
@@ -78,8 +78,10 @@ public class ClientChatter extends JFrame {
 		panel.add(lblNewLabel);
 		
 		txtStaff = new JTextField();
+		txtStaff.setText(inputStaffName);
 		panel.add(txtStaff);
 		txtStaff.setColumns(10);
+		txtStaff.setEditable(false);
 		
 		JLabel lblNewLabel_1 = new JLabel("Mng IP: ");
 		lblNewLabel_1.setFont(new Font("Times New Roman", Font.PLAIN, 14));
@@ -122,7 +124,7 @@ public class ClientChatter extends JFrame {
 						os.write(13); os.write(10);
 						os.flush();
 					}
-					DatabaseManager.updateClientName(staffName);
+					//DatabaseManager.updateClientName(staffName);
 					
 				} catch (Exception e2) {					
 					e2.printStackTrace();

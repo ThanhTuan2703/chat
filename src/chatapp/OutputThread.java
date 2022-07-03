@@ -35,7 +35,7 @@ public class OutputThread extends Thread{
 					String msg = " ";
 					if((msg=bf.readLine())!=null &&msg.length()>0) {
 						txt.append("\n"+receiver+":"+msg);
-						DatabaseManager.saveMessage(receiver, msg);
+						//DatabaseManager.saveMessage(receiver, msg);
 					}
 				}
 				sleep(1000);
